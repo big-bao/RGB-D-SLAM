@@ -1,1 +1,1 @@
-/usr/bin/c++       CMakeFiles/hello_slam.dir/src/hello_slam.cpp.o  -o ../bin/hello_slam -rdynamic 
+/usr/bin/c++     -Wno-deprecated     CMakeFiles/hello_slam.dir/src/hello_slam.cpp.o  -o ../bin/hello_slam -rdynamic 

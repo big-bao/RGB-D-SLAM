@@ -99,6 +99,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named generate_pointcloud
+
+# Build rule for target.
+generate_pointcloud: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 generate_pointcloud
+.PHONY : generate_pointcloud
+
+# fast build rule for target.
+generate_pointcloud/fast:
+	$(MAKE) -f CMakeFiles/generate_pointcloud.dir/build.make CMakeFiles/generate_pointcloud.dir/build
+.PHONY : generate_pointcloud/fast
+
+#=============================================================================
 # Target rules for targets named hello_slam
 
 # Build rule for target.
@@ -110,6 +123,30 @@ hello_slam: cmake_check_build_system
 hello_slam/fast:
 	$(MAKE) -f CMakeFiles/hello_slam.dir/build.make CMakeFiles/hello_slam.dir/build
 .PHONY : hello_slam/fast
+
+src/generatePointCloud.o: src/generatePointCloud.cpp.o
+.PHONY : src/generatePointCloud.o
+
+# target to build an object file
+src/generatePointCloud.cpp.o:
+	$(MAKE) -f CMakeFiles/generate_pointcloud.dir/build.make CMakeFiles/generate_pointcloud.dir/src/generatePointCloud.cpp.o
+.PHONY : src/generatePointCloud.cpp.o
+
+src/generatePointCloud.i: src/generatePointCloud.cpp.i
+.PHONY : src/generatePointCloud.i
+
+# target to preprocess a source file
+src/generatePointCloud.cpp.i:
+	$(MAKE) -f CMakeFiles/generate_pointcloud.dir/build.make CMakeFiles/generate_pointcloud.dir/src/generatePointCloud.cpp.i
+.PHONY : src/generatePointCloud.cpp.i
+
+src/generatePointCloud.s: src/generatePointCloud.cpp.s
+.PHONY : src/generatePointCloud.s
+
+# target to generate assembly for a file
+src/generatePointCloud.cpp.s:
+	$(MAKE) -f CMakeFiles/generate_pointcloud.dir/build.make CMakeFiles/generate_pointcloud.dir/src/generatePointCloud.cpp.s
+.PHONY : src/generatePointCloud.cpp.s
 
 src/hello_slam.o: src/hello_slam.cpp.o
 .PHONY : src/hello_slam.o
@@ -142,8 +179,12 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... generate_pointcloud"
 	@echo "... hello_slam"
 	@echo "... rebuild_cache"
+	@echo "... src/generatePointCloud.o"
+	@echo "... src/generatePointCloud.i"
+	@echo "... src/generatePointCloud.s"
 	@echo "... src/hello_slam.o"
 	@echo "... src/hello_slam.i"
 	@echo "... src/hello_slam.s"
